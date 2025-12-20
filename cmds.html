@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="shortcut icon" href="assets/icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="css/style.css">
+    <title>bonksmp | commands</title>
+</head>
+<body>
+    <div>
+        <h2>default commands</h2>
+        <h4 style="margin: 25px 0px 15px;">homes</h4>
+        <p style="text-align: left; margin: 0px;">
+            <b>/sethome [name]</b>: sets a spawn for you. pretty much personal warps<br>
+            <b>/home [name]</b>: go to one of your homes (you don't need a name if you have only one home)<br>
+            <b>/renamehome [old name] [new name]</b>: rename one of your homes<br>
+            <b>/delhome [name]</b>: delete one of your homes
+        </p>
+        <h4 style="margin: 25px 0px 15px;">tp requests</h4>
+        <p style="text-align: left; margin: 0px;">
+            <b>/tpa [player]</b>: request to teleport to a player. stand still for 5 seconds if they accept.<br>
+            <b>/tpahere [player]</b>: request a player to tp to you. they will need to stand still.<br>
+            <b>/tpaccept</b>: accept an incoming tp request.<br>
+            <b>/tpdeny</b>: deny an incoming tp request.<br>
+            <b>/tpcancel</b>: cancel any of your outgoing tp requests.</p>
+        <h4 style="margin: 25px 0px 15px;">misc</h4>
+        <p style="text-align: left; margin: 0px;">
+            <b>/msg [player]</b>: privately message a player.<br>
+            <b>/back</b>: return to the spot you died.<br>
+            <b>/hat</b>: puts the item in your hand as a hat. just for fun.<br>
+            <b>/rtp</b>: teleport somewhere random.</p>
+    </div>
+    <div>
+        <h2>commands per rank</h2>
+        <h4 style="margin: 25px 0px 15px;">testers</h4>
+        <p style="text-align: left; margin: 0px;">
+            everything from default<br>
+            <b>/feed</b>: refill selected player's hunger<br>
+            <b>/heal</b>: regen player to max hearts<br>
+            <b>/repair [all|hand]</b>: set durability of item to max<br>
+            <b>/echest</b>: open your permanent ender chest<br>
+            <b>/gamemode [0|1|2|3]</b>: change your gamemode<br>
+            <b>/warp</b>: tp to an existing warp<br>
+            <b>/warplist</b>: view all existing warps
+        </p>
+        <h4 style="margin: 25px 0px 15px;">helpers</h4>
+        <p style="text-align: left; margin: 0px;">
+            everything from default and tester<br>
+            <b>/createwarp [warp name]</b>: create a warp<br>
+            <b>/tp [player]</b>: teleport to a player without a request or wait<br>
+            + access to use tester cmds on other players<br>
+        </p>
+        <h4 style="margin: 25px 0px 15px;">elites</h4>
+        <p style="text-align: left; margin: 0px;">
+            everything from the other ranks<br>
+            <b>/kick [player]</b>: kick a player from the server<br>
+            <b>/tempban [player] [time]</b>: ban a player for a set amount of time<br>
+            <b>/mute [player]</b>: shut someone up<br>
+            <b>/cell [player] </b>: send someone to the slammer<br>
+            <b>/enchant [enchant] [level]</b>: enchant an item in your hand, max lvl 32,768<br>
+            <b>/summon [item]</b>: summon anything, anywhere<br>
+            <b>/give [item] [amount]</b>: give anybody any item, even not from the creative ui
+        </p>
+        <p>do not use brackets in commands!</p>
+    </div>
+    <div>
+        <h1>NOTICE: COMMANDS MAY NOT WORK SOMETIMES!</h1>
+        <h4>still figuring out luckperms, so notify me if a command doesn't work</h4>
+    </div>
+    <script src="js/navigation.js"></script>
+</body>
+</html>

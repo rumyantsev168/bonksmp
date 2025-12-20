@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="shortcut icon" href="assets/icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="css/style.css">
+    <title>bonksmp | banlands</title>
+</head>
+<body class="ban">
+    <div id="banned">
+        <!--stored in data/banned.json-->
+        <h1>banned</h1>
+        <div style="display: grid; grid-template-columns: repeat(4, 1fr); width: 1000px;">
+            <div id="elites">
+                <h3>elites</h3>
+            </div>
+            <div id="helpers">
+                <h3>helpers</h3>
+            </div>
+            <div id="testers">
+                <h3>testers</h3>
+            </div>
+            <div id="nerds">
+                <h3>nerds</h3>
+            </div>
+        </div>
+    </div>
+    <div id="demoted">
+        <!--stored in data/demoted.json-->
+        <h1>demoted</h1>
+    </div>
+    <div id="pardoned">
+        <!--stored in data/pardoned.json-->
+        <h1>pardoned</h1>
+    </div>
+    <script src="js/navigation.js"></script>
+    <script>
+        const bannedContainer = document.getElementById("banned");
+        const demotedContainer = document.getElementById("demoted");
+        const pardonedContainer = document.getElementById("pardoned");
+        const elitesBannedList = document.getElementById("elites");
+        const helpersBannedList = document.getElementById("helpers");
+        const testersBannedList = document.getElementById("testers");
+        const nerdsBannedList = document.getElementById("nerds");
+
+        fetch("data/banned.json")
+        .then(obj => obj.json())
+        .then(res => {
+            res.forEach(item => {
+                let playerHTML = `
+                    <p title="reason: ${item.reason ? item.reason : 'not specified'}">
+                        ${item.username}
+                    </p>
+                `;
+                if (item.rank == "elite") {
+                    elitesBannedList.innerHTML += playerHTML;
+                }
+                else if (item.rank == "helper") {
+                    helpersBannedList.innerHTML += playerHTML;
+                }
+                else if (item.rank == "tester") {
+                    testersBannedList.innerHTML += playerHTML;
+                }
+                else if (item.rank == "nerd") {
+                    nerdsBannedList.innerHTML += playerHTML;
+                }
+                else {
+                     console.warn(`Couldn't sort player ${item.username}. Rank is not one of 'nerd', 'tester', 'helper', 'elite'.`);
+                };
+            });
+        })
+        .catch(err => {
+            console.error("Error while fetching banned.json!", err);
+            bannedContainer.innerHTML += "failed to display";
+        })
+        .finally(() => {
+            if (elitesBannedList.innerHTML.trim() == "<h3>elites</h3>") {
+                elitesBannedList.innerHTML += "<p>no one here</p>";
+            };
+            if (helpersBannedList.innerHTML.trim() == "<h3>helpers</h3>") {
+                helpersBannedList.innerHTML += "<p>no one here</p>";
+            };
+            if (testersBannedList.innerHTML.trim() == "<h3>testers</h3>") {
+                testersBannedList.innerHTML += "<p>no one here</p>";
+            };
+            if (nerdsBannedList.innerHTML.trim() == "<h3>nerds</h3>") {
+                nerdsBannedList.innerHTML += "<p>no one here</p>";
+            };
+        });
+
+        fetch("data/demoted.json")
+        .then(obj => obj.json())
+        .then(res => {
+            res.forEach(item => {
+                demotedContainer.innerHTML += `
+                    <p title="reason: ${item.reason ? item.reason : 'not specified'}">
+                        ${item.username} to ${item.demotedTo}
+                    </p>
+                `;
+            });
+        })
+        .catch(err => {
+            console.error("Error while fetching demoted.json!", err);
+            demotedContainer.innerHTML += "failed to display";
+        })
+        .finally(() => {
+            if (demotedContainer.innerHTML.trim() == "<h2>demoted</h2>") {
+                demotedContainer.innerHTML += "<p>no one here</p>";
+            };
+        });
+
+        fetch("data/pardoned.json")
+        .then(obj => obj.json())
+        .then(res => {
+            res.forEach(item => {
+                pardonedContainer.innerHTML += `
+                    <p title="reason: ${item.reason ? item.reason : 'not specified'}">
+                        ${item.username}
+                    </p>
+                `;
+            });
+        })
+        .catch(err => {
+            console.error("Error while fetching pardoned.json!", err);
+            pardonedContainer.innerHTML += "failed to display";
+        })
+        .finally(() => {
+            if (pardonedContainer.innerHTML.trim() == "<h2>pardoned</h2>") {
+                pardonedContainer.innerHTML += "<p>no one here</p>";
+            };
+        });
+    </script>
+</body>
+</html>

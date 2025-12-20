@@ -1,0 +1,122 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    margin: 0px;
+    padding: 10px;
+    background-color: #f4f1de;
+    font-family: courier;
+    font-size: 22px;
+    text-align: center;
+    overflow-y: scroll;
+    scrollbar-width: 0px;
+    -ms-overflow-style: none;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+nav {
+    margin: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+h1 {
+    margin: 15px 0px;
+}
+
+h1, a {
+    color: #b42313;
+}
+
+p {
+    color: #280b26;
+    font-size: 18px;
+}
+
+button {
+    padding: 12px;
+    color: #e65e4c;
+    border: 3px solid #e65e4c;
+    font-family: courier;
+    font-size: 22px;
+    font-weight: bold;
+    cursor: pointer;
+    background-color: #feb58b;
+    min-width: 150px;
+}
+
+button:hover {
+    border-color: #ad493b;
+    color: #ad493b;
+}
+
+button:disabled {
+    background-color: #facdac;
+    border-color: #ec9887;
+    color: #ec9887;
+    cursor: not-allowed;
+}
+
+.box {
+    margin: 0px auto;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    width: fit-content;
+    border: 2px solid black;
+    background: #f9f8f0;
+}
+
+section {
+    height: 100vh;
+}
+
+div#player-list > div {
+    justify-content: center;
+}
+
+li {
+    text-align: left;
+}
+
+table {
+    border-spacing: 0px;
+}
+
+table, td {
+    border: 1px solid black;
+}
+
+table#updates-table > tbody > tr > td {
+    width: fit-content;
+}
+
+table#updates-table > tbody > tr > td:nth-of-type(3) {
+    text-align: left;
+}
+
+body.ban {
+    background-color: black;
+}
+
+body.ban h1,
+body.ban h2 {
+    color: #b42313;
+}
+
+body.ban h3,
+body.ban p {
+    color: #feb58b;
+}
+
+body.ban button {
+    color: #e65e4c;
+    border-color: #e65e4c;
+    background-color: black;
+}
