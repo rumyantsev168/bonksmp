@@ -14,6 +14,12 @@ body {
     -ms-overflow-style: none;
 }
 
+@media (max-device-width:768px) {
+    html {
+        zoom: 35% !important
+    }
+}
+
 body::-webkit-scrollbar {
     display: none;
 }
@@ -48,7 +54,7 @@ button {
     font-weight: bold;
     cursor: pointer;
     background-color: #feb58b;
-    min-width: 150px;
+    min-width: 140px;
 }
 
 button:hover {
@@ -118,5 +124,17 @@ body.ban p {
 body.ban button {
     color: #e65e4c;
     border-color: #e65e4c;
-    background-color: black;
+    background-color: #220000;
+}
+
+body.ban button:hover {
+    border-color: #ad493b;
+    color: #ad493b;
+}
+
+body.ban button:disabled {
+    background-color: #110000;
+    border-color: #770000;
+    color: #770000;
+    cursor: not-allowed;
 }
