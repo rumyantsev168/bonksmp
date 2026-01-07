@@ -1,5 +1,4 @@
-function select(e, el) {
-    e.preventDefault();
+function select(el) {
     selectText(el.childNodes[0])
     let res = false;
     try {
@@ -22,4 +21,5 @@ function selectText(node) {
         selection.removeAllRanges();
         selection.addRange(range);
     } else { console.warn("Could not select text in node: Unsupported browser.") };
+
 };
