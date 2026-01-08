@@ -16,7 +16,7 @@ body {
 
 @media (max-device-width:768px) {
     html {
-        zoom: 35% !important
+        zoom: 50% !important
     }
 }
 
@@ -107,34 +107,66 @@ table#updates-table > tbody > tr > td:nth-of-type(3) {
     text-align: left;
 }
 
-body.ban {
+body.bans, body.mods {
     background-color: black;
 }
 
-body.ban h1,
-body.ban h2 {
+body.bans h1,
+body.bans h2 {
     color: #b42313;
 }
 
-body.ban h3,
-body.ban p {
+body.bans h3,
+body.bans p {
     color: #feb58b;
 }
 
-body.ban button {
+body.bans button {
     color: #e65e4c;
     border-color: #e65e4c;
     background-color: #220000;
 }
 
-body.ban button:hover {
+body.bans button:hover {
     border-color: #ad493b;
     color: #ad493b;
 }
 
-body.ban button:disabled {
+body.bans button:disabled {
     background-color: #110000;
     border-color: #770000;
     color: #770000;
     cursor: not-allowed;
+}
+
+body.mods h1,
+body.mods h2 {
+    color: #ffffff;
+}
+
+body.mods p,
+body.mods small {
+    color: #dadada;
+}
+
+body.mods p {
+    text-align: left;
+}
+
+body.mods button {
+    padding: 12px;
+    color: #ffffff;
+    border: 3px solid #ffffff;
+    font-family: courier;
+    font-size: 22px;
+    font-weight: bold;
+    cursor: pointer;
+    background-color: #000000;
+    min-width: 140px;
+}
+
+body.mods img {
+    color: #ffffff;
+    border: none;
+    border-radius: 15px;
 }
