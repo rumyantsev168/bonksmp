@@ -21,5 +21,4 @@ function selectText(node) {
         selection.removeAllRanges();
         selection.addRange(range);
     } else { console.warn("Could not select text in node: Unsupported browser.") };
-
 };

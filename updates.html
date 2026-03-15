@@ -3,48 +3,149 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <link rel="shortcut icon" href="assets/icon.png" type="image/x-icon">
+    <link rel="icon" href="assets/favicon.png">
     <link rel="stylesheet" href="css/style.css">
+    <style>
+        main > div#upd-cont {
+            display: grid;
+            grid-template-columns: repeat(2, 600px);
+        }
+
+        main > div#upd-cont > div {
+            padding: 10px;
+            text-align: left;
+            border: 2px solid black;
+        }
+
+        main > div#upd-cont > div > div {
+            display: flex;
+            flex-direction: column-reverse;
+            gap: 5px;
+        }
+
+        main > div#upd-cont > div > div > p {
+            margin: 0px;
+        }
+
+        main > div#recipes {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+        }
+
+        main > div#recipes > div {
+            justify-self: center;
+        }
+    </style>
     <title>bonksmp | updates</title>
 </head>
 <body>
-    <!--updates are stored in data/updates.json-->
-    <table id="updates-table"></table>
+    <!--updates are stored in data/server_updates.yml and data/site_updates.yml-->
+    <main>
+        <div id="upd-cont">
+            <div>
+                <h3 style="text-align: center; margin: 0px 0px 10px;">server:</h3>
+                <div id="server-updates"></div>
+            </div>
+            <div>
+                <h3 style="text-align: center; margin: 0px 0px 10px;">website:</h3>
+                <div id="site-updates"></div>
+            </div>
+        </div>
+        <h3>mace and wind charge recipes!!</h3>
+        <!--bonk don't touch this code pls-->
+        <!--the recipe updated not too long ago, had to change it-->
+        <!--btw, pls make the tooltips go on top-->
+        <div id="recipes">
+            <div class="mcui crafting-ui">
+                <div class="crafting-grid">
+                    <div class="slot-row">
+                        <item-slot item="https://minecraft.wiki/images/Invicon_Block_of_Coal.png" tooltip="Block of Coal"></item-slot>
+                        <item-slot item="https://minecraft.wiki/images/Invicon_Block_of_Gold.png" tooltip="Block of Gold"></item-slot>
+                        <item-slot></item-slot>
+                    </div>
+                    <div class="slot-row">
+                        <item-slot item="https://minecraft.wiki/images/Invicon_Block_of_Gold.png" tooltip="Block of Gold"></item-slot>
+                        <item-slot item="https://minecraft.wiki/images/Invicon_Block_of_Coal.png" tooltip="Block of Coal"></item-slot>
+                        <item-slot></item-slot>
+                    </div>
+                    <div class="slot-row">
+                        <item-slot></item-slot>
+                        <item-slot></item-slot>
+                        <item-slot></item-slot>
+                    </div>
+                </div>
+                <div class="crafting-arrow"></div>
+                <item-slot large item="https://minecraft.wiki/images/Invicon_Obsidian.png" tooltip="&bHeavy Core"></item-slot>
+            </div>
+            <div class="mcui crafting-ui">
+                <div class="crafting-grid">
+                    <div class="slot-row">
+                        <item-slot></item-slot>
+                        <item-slot item="https://minecraft.wiki/images/Invicon_Diamond.png" tooltip="Diamond"></item-slot>
+                        <item-slot></item-slot>
+                    </div>
+                    <div class="slot-row">
+                        <item-slot></item-slot>
+                        <item-slot item="https://minecraft.wiki/images/Invicon_Blaze_Rod.png" tooltip="Blaze Rod"></item-slot>
+                        <item-slot></item-slot>
+                    </div>
+                    <div class="slot-row">
+                        <item-slot></item-slot>
+                        <item-slot item="https://minecraft.wiki/images/Invicon_Diamond.png" tooltip="Diamond"></item-slot>
+                        <item-slot></item-slot>
+                    </div>
+                </div>
+                <div class="crafting-arrow"></div>
+                <item-slot large item="https://minecraft.wiki/images/Invicon_Blaze_Rod.png" tooltip="&bBreeze Rod"></item-slot>
+            </div>
+            <div class="mcui crafting-ui">
+                <div class="crafting-grid">
+                    <div class="slot-row">
+                        <item-slot item="https://minecraft.wiki/images/Invicon_Obsidian.png" tooltip="&bHeavy Core"></item-slot>
+                        <item-slot></item-slot>
+                        <item-slot></item-slot>
+                    </div>
+                    <div class="slot-row">
+                        <item-slot item="https://minecraft.wiki/images/Invicon_Blaze_Rod.png" tooltip="&bBreeze Rod"></item-slot>
+                        <item-slot></item-slot>
+                        <item-slot></item-slot>
+                    </div>
+                    <div class="slot-row">
+                        <item-slot></item-slot>
+                        <item-slot></item-slot>
+                        <item-slot></item-slot>
+                    </div>
+                </div>
+                <div class="crafting-arrow"></div>
+                <item-slot large item="https://minecraft.wiki/images/Enchanted_Iron_Axe.gif" tooltip="&dMace\n&7Knockback I\nUnbreaking I\n\nWhen in main hand:\n .9 Attack Speed\n 9 Attack Damage"></item-slot>
+            </div>
+            <div class="mcui crafting-ui">
+                <div class="crafting-grid">
+                    <div class="slot-row">
+                        <item-slot></item-slot>
+                        <item-slot item="https://minecraft.wiki/images/Invicon_Feather.png" tooltip="Feather"></item-slot>
+                        <item-slot></item-slot>
+                    </div>
+                    <div class="slot-row">
+                        <item-slot></item-slot>
+                        <item-slot item="https://minecraft.wiki/images/Invicon_Blaze_Rod.png" tooltip="&bBreeze Rod"></item-slot>
+                        <item-slot></item-slot>
+                    </div>
+                    <div class="slot-row">
+                        <item-slot></item-slot>
+                        <item-slot></item-slot>
+                        <item-slot></item-slot>
+                    </div>
+                </div>
+                <div class="crafting-arrow"></div>
+                <item-slot large item="https://minecraft.wiki/images/Invicon_Snowball.png" count="8" tooltip="&dWind Charge"></item-slot>
+            </div>
+        </div>
+    </main>
     <script src="js/navigation.js"></script>
-    <script>
-        const updTable = document.getElementById("updates-table");
-        fetch("data/updates.json")
-        .then(obj => obj.json())
-        .then(res => {
-            updTable.innerHTML += `
-                <tr>
-                    <td style="text-align: center"><b>Date</b></td>
-                    <td style="text-align: center"><b>Category</b></td>
-                    <td style="text-align: center"><b>Content</b></td>
-                </tr>
-            `;
-            for (let i = res.length-1; i > 0; i--) {
-                let item = res[i];
-                console.log(item);
-                updTable.innerHTML += `
-                    <tr>
-                        <td>${item.date ? new Date(item.date).toLocaleString(
-                            "en-US", {
-                                year: "numeric",
-                                month: "long",
-                                day: "numeric"
-                            }
-                        ) : "-"}</td>
-                        <td>${item.type ? item.type : "-"}</td>
-                        <td>${item.content}</td>
-                    </tr>
-                `;
-            };
-        })
-        .catch(err => {
-            console.error("Error while fetching updates list!", err);
-            updTable.innerText = "Update list is currently not available :(";
-        });
-    </script>
+    <script src="js/ItemSlot.js"></script>
+    <script src="js/updatesYAML.js"></script>
+    <script src="js/min/js-yaml.min.js"></script>
 </body>
 </html>

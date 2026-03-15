@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="assets/favicon.png">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/rainbow.css">
     <title>bonksmp | home</title>
 </head>
 <body>
@@ -13,26 +14,64 @@
         <h1>welcome to bonksmp website!</h1>
         <h2>haven't played the server yet? try it out!</h2>
         <span>click to copy</span>
-        <h1 id="ip" class="box" onclick="select(this)" style="cursor: pointer">wss://bonksmp.eagler.host</h1>
+        <h1 id="ip" class="box" onclick="select(this)" style="cursor: pointer">
+            <span class="rainbow-shadow">wss://bonksmp.eagler.host</span>
+        </h1>
     </div>
     <div style="cursor: pointer" onclick="location.reload();">
-        <h3 style="margin: 0px;">Live player count: <span id="player-count">-</span></h3>
-        <span>click here to refresh</span><br>
-        <a href="mods.html">
+       <h3 style="margin: 0px;">Live player count: <span id="player-count">-</span>/<span id="max-player-count">-</span></h3>
+       <span>click here to refresh</span><br>
+    </div>
+        <a href="/mods.html">
             <img src="assets/icon.png" title="bonksmp icon" height="200">
         </a>
-    </div>
     <div>
         <a href="https://discord.gg/X3zHFayg6y"><h3 style="margin: 0px;">>> join discord <<</h3></a>
-        <p style="margin: 0px;">we hope to see you there!</p>
+    </div>
+    <div>
+        <a href="https://topeaglerservers.com/vote/6a12e496" style="text-decoration: none; font-weight: bold;"><p>vote for bonksmp!</p></a>
     </div>
     <script src="js/navigation.js"></script>
     <script src="js/copy.js"></script>
     <script>
+        // Get data/ALERT.txt and do alert() if that file is not empty
+        // and was last modified less than X days ago
+        let alertFile = "data/ALERT.txt";
+        let daysAgo = 5;
+
+        function fetchAlert() {
+            let isAlerted = sessionStorage.getItem("isAlerted");
+            if (isAlerted !== "true") {
+                try {
+                    let req = new XMLHttpRequest();
+                    req.open("HEAD", alertFile, false);
+                    req.send(null);
+                    if (req.status != 200) return;
+                    let lastMod = req.getResponseHeader("Last-Modified");
+                    if (Math.floor(Math.abs(new Date() - new Date(lastMod)) / (1000 * 60 * 60 * 24)) > daysAgo) return;
+                    fetch("data/ALERT.txt")
+                    .then(obj => obj.text())
+                    .then(data => {
+                        if (data) {
+                            alert(data);
+                        };
+                    });
+                    sessionStorage.setItem("isAlerted", "true");
+                } catch(err) {
+                    console.error(`Failed to fetch ${alertFile}!`, err);
+                    return;
+                };
+            };
+        };
+
+        fetchAlert();
+    </script>
+    <script>
         // Get online players count
         const count = document.getElementById("player-count");
-        const list = document.getElementById("player-list");
-        let playerList = [];
+        const maxCount = document.getElementById("max-player-count");
+        // const list = document.getElementById("player-list");
+        // let playerList = [];
 
         const ws = new WebSocket(document.getElementById("ip").innerText);
         ws.onopen = () => {
@@ -43,6 +82,7 @@
             let data = JSON.parse(event.data);
             console.log(data);
             count.innerText = data.data.online;
+            maxCount.innerText = data.data.max;
             /* Players list is always empty in response
             if (data.data.players.length) {
                 data.data.players.forEach((item) => {

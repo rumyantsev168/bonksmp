@@ -54,7 +54,11 @@ button {
     font-weight: bold;
     cursor: pointer;
     background-color: #feb58b;
-    min-width: 140px;
+    width: calc((100vw - 80px) / 7);
+    font-size: min(calc((100vw - 80px) / 56), 1em);
+    max-width: 140px;
+    height: 55px;
+    overflow: hidden;
 }
 
 button:hover {

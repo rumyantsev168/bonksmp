@@ -3,34 +3,100 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <link rel="shortcut icon" href="assets/icon.png" type="image/x-icon">
+    <link rel="icon" href="assets/favicon.png">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/rainbow.css">
+    <style>
+        div#devs > div > p {
+            cursor: default;
+            margin: 0px;
+            word-break: keep-all;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+        }
+
+        #spamton-img {
+            display: none;
+            position: absolute;
+        }
+
+        #spamton:hover #spamton-img {
+            display: block;
+        }
+    </style>
     <title>bonksmp | developers</title>
 </head>
 <body>
-    <div style="display: grid; grid-template-columns: repeat(4, 1fr); width: 1000px">
+    <div style="display: grid; grid-template-columns: repeat(5, 1fr); width: 1250px" id="devs">
         <div>
-            <h2>owner</h2>
-            <p>bonkpixil</p>
+            <h2>bonk</h2>
+            <p><span class="rainbow-shadow">bonkpixil</span></p>
         </div>
         <div>
             <h2>elites</h2>
-            <p>sir_logan_63<p>
-            <p>Hayech</p>
+            <p><b>[duck]</b><span class="rainbow-shadow">sir_logan_638953</span></p>
+            <p><b>[mod]</b><span class="rainbow-shadow">Hayech</span></p>
+            <p>aeiro1212 (temp)</p>
+        </div>
+        <div>
+            <h2>editors</h2>
+            <p>aeiro1212</p>
+            <p>og1</p>
+            <p><span class="rainbow-shadow change-text" data-hover="site editor!">Medvedko</span></p>
         </div>
         <div>
             <h2>helpers</h2>
             <p>Latsun</p>
             <p>kaidun1112cubosh</p>
             <p>SukLemon</p>
+            <p>antonyceee</p>
+            <p>Limey_</p>
+            <p>bobob</p>
         </div>
         <div>
             <h2>testers</h2>
             <p>1O0l</p>
-            <p>antonyceee</p>
-            <p>aeiro1212</p>
+            <p>Best_assassin</p>
         </div>
     </div>
+    <div style="display: flex; align-items: center; gap: 10px;">
+        special thanks to our
+        <span id="spamton">
+            <span><b>[plugineer]</b> SpamtonGSpamton</span>
+            <!--<img id="spamton-img" src="assets/spamton2.gif" width="150">-->
+        </span>
+        <img src="assets/spamton.gif" style="display: inline-block" width="32">
+    </div>
     <script src="js/navigation.js"></script>
+    <script>
+        const spamtonImg = document.getElementById("spamton-img");
+        if (spamtonImg) {
+            document.addEventListener("mousemove", (event) => {
+                move(event, spamtonImg);
+            });
+        };
+
+        const move = (e, el) => {
+            try {
+                el.style.left = e.pageX + 15 + "px";
+                el.style.top = e.pageY + 15 + "px";
+            } catch (err) {};
+        };
+
+        document.querySelectorAll(".change-text").forEach(el => {
+            el.setAttribute("data-orig", el.innerText);
+        });
+
+        document.querySelectorAll(".change-text").forEach(el => {
+            el.addEventListener("mouseover", () => {
+                el.innerText = el.dataset.hover;
+            });
+            el.addEventListener("mouseout", () => {
+                el.innerText = el.dataset.orig;
+            });
+        });
+    </script>
 </body>
 </html>

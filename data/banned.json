@@ -1,14 +1,44 @@
 [
     {
         "username": "boostone",
-        "rank": "nerd",
-        "punishment": "sentenced to life in bonk's tv",
+        "rank": "loser",
+        "punishment": "permanently jailed",
         "reason": "hacked onto bonk's account and destroyed parts of lobby"
     },
     {
         "username": "TACOCAT",
-        "rank": "nerd",
+        "rank": "loser",
         "punishment": "permanently banned",
-        "reason": "was given gamemode permissions as requested by SukLemon. destroyed bonk's house and suk's castle several times"
+        "reason": "destroyed bonk's house and suk's castle several times after given gm perms"
+    },
+    {
+        "username": "fire_fragments",
+        "rank": "loser",
+        "punishment": "permanently ip banned",
+        "reason": "hacking"
+    },
+    {
+        "username": "Femmbuu",
+        "rank": "loser",
+        "punishment": "permanently ip banned",
+        "reason": "hacking"
+    },
+    {
+        "username": "dashs",
+        "rank": "loser",
+        "punishment": "permanently ip banned",
+        "reason": "attempted account hijacking"
+    },
+    {
+        "username": "og1",
+        "rank": "editor",
+        "punishment": "permanently banned, several demotions",
+        "reason": "griefing, abusing, disrespect, i could go on"
+    },
+    {
+        "username": "Boof",
+        "rank": "editor",
+        "punishment": "permanently jailed and muted",
+        "reason": "advertising repeatedly, griefing, argued with bonk"
     }
 ]
