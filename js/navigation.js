@@ -10,7 +10,7 @@ pagesNames.forEach((name, i) => {
     } else if (pn == name+".html") {
         currentLink = `<button disabled title="You are already here!">${pagesDisplayNames[i]}</button>`;
     } else {
-        currentLink = `<a href="/${name}.html"><button>${pagesDisplayNames[i]}</button></a>`;
+        currentLink = `<a href="${name}.html"><button>${pagesDisplayNames[i]}</button></a>`;
     }
     navMenu = navMenu + currentLink;
 });
