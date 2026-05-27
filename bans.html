@@ -11,21 +11,18 @@
     <div id="banned">
         <!--stored in data/banned.json-->
         <h1>banned</h1>
-        <div style="display: grid; grid-template-columns: repeat(5, 1fr); width: 1000px;">
+        <div style="display: grid; grid-template-columns: repeat(4, 1fr); width: 1000px;">
             <div id="elites">
                 <h3>elites</h3>
             </div>
             <div id="helpers">
                 <h3>helpers</h3>
             </div>
-            <div id="editors">
-                <h3>editors</h3>
-            </div>
             <div id="testers">
                 <h3>testers</h3>
             </div>
-            <div id="losers">
-                <h3>losers</h3>
+            <div id="nerds">
+                <h3>nerds</h3>
             </div>
         </div>
     </div>
@@ -44,14 +41,12 @@
         const pardonedContainer = document.getElementById("pardoned");
         const elitesBannedList = document.getElementById("elites");
         const helpersBannedList = document.getElementById("helpers");
-        const editorsBannedList = document.getElementById("editors");
         const testersBannedList = document.getElementById("testers");
-        const loserBannedList = document.getElementById("losers");
+        const nerdsBannedList = document.getElementById("nerds");
 
         fetch("data/banned.json")
         .then(obj => obj.json())
         .then(res => {
-            console.log(res);
             res.forEach(item => {
                 let playerHTML = `
                     <p title="reason: ${item.reason ? item.reason : 'not specified'}">
@@ -64,23 +59,20 @@
                 else if (item.rank == "helper") {
                     helpersBannedList.innerHTML += playerHTML;
                 }
-                else if (item.rank == "editor") {
-                    editorsBannedList.innerHTML += playerHTML;
-                }
                 else if (item.rank == "tester") {
                     testersBannedList.innerHTML += playerHTML;
                 }
-                else if (item.rank == "loser") {
-                    loserBannedList.innerHTML += playerHTML;
+                else if (item.rank == "nerd") {
+                    nerdsBannedList.innerHTML += playerHTML;
                 }
                 else {
-                     console.warn(`Couldn't sort player ${item.username}. Rank is not one of 'loser', 'tester', 'helper', 'editor', 'elite'.`);
+                     console.warn(`Couldn't sort player ${item.username}. Rank is not one of 'nerd', 'tester', 'helper', 'elite'.`);
                 };
             });
         })
         .catch(err => {
             console.error("Error while fetching banned.json!", err);
-            bannedContainer.innerHTML += "<p>failed to display</p>";
+            bannedContainer.innerHTML += "failed to display";
         })
         .finally(() => {
             if (elitesBannedList.innerHTML.trim() == "<h3>elites</h3>") {
@@ -92,8 +84,8 @@
             if (testersBannedList.innerHTML.trim() == "<h3>testers</h3>") {
                 testersBannedList.innerHTML += "<p>no one here</p>";
             };
-            if (losersBannedList.innerHTML.trim() == "<h3>losers</h3>") {
-                losersBannedList.innerHTML += "<p>no one here</p>";
+            if (nerdsBannedList.innerHTML.trim() == "<h3>nerds</h3>") {
+                nerdsBannedList.innerHTML += "<p>no one here</p>";
             };
         });
 
