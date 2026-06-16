@@ -6,7 +6,7 @@ body {
     margin: 0px;
     padding: 10px;
     background-color: #f4f1de;
-    font-family: courier;
+    font-family: monospace;
     font-size: 22px;
     text-align: center;
     overflow-y: scroll;
