@@ -6,7 +6,7 @@ let navMenu = "";
 pagesFileNames.forEach((name, i) => {
     let pn = document.location.pathname.split("/").at(-1);
     if (name == "index" && pn == "") {
-        currentLink = `<button disabled title="You are already here!">Home</button>`;
+        currentLink = `<button disabled title="You are already here!">home</button>`;
     } else if (pn == name+".html") {
         currentLink = `<button disabled title="You are already here!">${pagesDisplayNames[i]}</button>`;
     } else {
