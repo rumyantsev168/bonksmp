@@ -1,9 +1,17 @@
+html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
 body {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 15px;
     margin: 0px;
+    width: calc(100% - 20px);
     padding: 10px;
     background-color: #f4f1de;
     font-family: monospace;
@@ -12,12 +20,6 @@ body {
     overflow-y: scroll;
     scrollbar-width: 0px;
     -ms-overflow-style: none;
-}
-
-@media (max-device-width:768px) {
-    html {
-        zoom: 50% !important
-    }
 }
 
 body::-webkit-scrollbar {
@@ -30,6 +32,7 @@ nav {
     align-items: center;
     justify-content: center;
     gap: 10px;
+    width: 100%;
 }
 
 h1 {
@@ -45,33 +48,32 @@ p {
     font-size: 18px;
 }
 
-button {
-    padding: 12px;
+a.nav {
+    padding: clamp(0px, (100vw - 320px) * 0.02, 12px);;
     color: #e65e4c;
     border: 3px solid #e65e4c;
     font-family: monospace;
-    font-size: 22px;
+    font-size: clamp(20px, calc((100vw - 400px) * 0.015), 22px);
     font-weight: bold;
     cursor: pointer;
     background-color: #feb58b;
-    width: calc((100vw - 80px) / 7);
-    font-size: min(calc((100vw - 80px) / 56), 1em);
-    max-width: 140px;
-    height: 55px;
+    width: calc((100%) / 7);
+    height: fit-content;
     overflow: hidden;
+    text-overflow: ellipsis;
     word-break: keep-all;
+    text-decoration: none;
 }
 
-button:hover {
+a.nav:hover {
     border-color: #ad493b;
     color: #ad493b;
 }
 
-button:disabled {
+a.nav[disabled] {
     background-color: #facdac;
     border-color: #ec9887;
     color: #ec9887;
-    cursor: not-allowed;
 }
 
 .box {
@@ -126,18 +128,18 @@ body.bans p {
     color: #feb58b;
 }
 
-body.bans button {
+body.bans a.nav {
     color: #e65e4c;
     border-color: #e65e4c;
     background-color: #220000;
 }
 
-body.bans button:hover {
+body.bans a.nav:hover {
     border-color: #ad493b;
     color: #ad493b;
 }
 
-body.bans button:disabled {
+body.bans a.nav[disabled] {
     background-color: #110000;
     border-color: #770000;
     color: #770000;
