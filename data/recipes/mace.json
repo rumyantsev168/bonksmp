@@ -1,0 +1,33 @@
+{
+    "width": 3,
+    "height": 3,
+    "title": "Crafting",
+    "rows": [
+        [
+            {},
+            {
+                "tooltip": "&bHeavy Core",
+                "image": "https://minecraft.wiki/images/Invicon_Obsidian.png"
+            },
+            {}
+        ],
+        [
+            {},
+            {
+                "tooltip": "&bBreeze Rod",
+                "image": "https://minecraft.wiki/images/Invicon_Blaze_Rod.png"
+            },
+            {}
+        ],
+        [
+            {},
+            {},
+            {}
+        ]
+    ],
+    "result": {
+        "large": true,
+        "tooltip": "&dMace\n&7Knockback I\nUnbreaking I\n\nWhen in main hand:\n .9 Attack Speed\n 9 Attack Damage",
+        "image": "https://minecraft.wiki/images/Enchanted_Iron_Axe.gif"
+    }
+}

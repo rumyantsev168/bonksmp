@@ -57,54 +57,10 @@
         <!--bonk: the recipe updated not too long ago, had to change it-->
         <!--btw, pls make the tooltips go on top-->
         <div id="recipes">
-            <item-slot-grid>
-                <item-slot item="https://minecraft.wiki/images/Invicon_Block_of_Coal.png" tooltip="Block of Coal"></item-slot>
-                <item-slot item="https://minecraft.wiki/images/Invicon_Block_of_Gold.png" tooltip="Block of Gold"></item-slot>
-                <item-slot></item-slot>
-                <item-slot item="https://minecraft.wiki/images/Invicon_Block_of_Gold.png" tooltip="Block of Gold"></item-slot>
-                <item-slot item="https://minecraft.wiki/images/Invicon_Block_of_Coal.png" tooltip="Block of Coal"></item-slot>
-                <item-slot></item-slot>
-                <item-slot></item-slot>
-                <item-slot></item-slot>
-                <item-slot></item-slot>
-                <item-slot result large item="https://minecraft.wiki/images/Invicon_Obsidian.png" tooltip="&bHeavy Core"></item-slot>
-            </item-slot-grid>
-            <item-slot-grid>
-                <item-slot></item-slot>
-                <item-slot item="https://minecraft.wiki/images/Invicon_Diamond.png" tooltip="Diamond"></item-slot>
-                <item-slot></item-slot>
-                <item-slot></item-slot>
-                <item-slot item="https://minecraft.wiki/images/Invicon_Blaze_Rod.png" tooltip="Blaze Rod"></item-slot>
-                <item-slot></item-slot>
-                <item-slot></item-slot>
-                <item-slot item="https://minecraft.wiki/images/Invicon_Diamond.png" tooltip="Diamond"></item-slot>
-                <item-slot></item-slot>
-                <item-slot result large item="https://minecraft.wiki/images/Invicon_Blaze_Rod.png" tooltip="&bBreeze Rod"></item-slot>
-            </item-slot-grid>
-            <item-slot-grid>
-                <item-slot item="https://minecraft.wiki/images/Invicon_Obsidian.png" tooltip="&bHeavy Core"></item-slot>
-                <item-slot></item-slot>
-                <item-slot></item-slot>
-                <item-slot item="https://minecraft.wiki/images/Invicon_Blaze_Rod.png" tooltip="&bBreeze Rod"></item-slot>
-                <item-slot></item-slot>
-                <item-slot></item-slot>
-                <item-slot></item-slot>
-                <item-slot></item-slot>
-                <item-slot></item-slot>
-                <item-slot result large item="https://minecraft.wiki/images/Enchanted_Iron_Axe.gif" tooltip="&dMace\n&7Knockback I\nUnbreaking I\n\nWhen in main hand:\n&nbsp;.9 Attack Speed\n&nbsp;9 Attack Damage"></item-slot>
-            </item-slot-grid>
-            <item-slot-grid>
-                <item-slot></item-slot>
-                <item-slot item="https://minecraft.wiki/images/Invicon_Feather.png" tooltip="Feather"></item-slot>
-                <item-slot></item-slot>
-                <item-slot></item-slot>
-                <item-slot item="https://minecraft.wiki/images/Invicon_Blaze_Rod.png" tooltip="&bBreeze Rod"></item-slot>
-                <item-slot></item-slot>
-                <item-slot></item-slot>
-                <item-slot></item-slot>
-                <item-slot></item-slot>
-                <item-slot result large item="https://minecraft.wiki/images/Invicon_Snowball.png" count="8" tooltip="&dWind Charge"></item-slot>
-            </item-slot-grid>
+            <item-slot-grid json="data/recipes/heavy_core.json"></item-slot-grid>
+            <item-slot-grid json="data/recipes/breeze_rod.json"></item-slot-grid>
+            <item-slot-grid json="data/recipes/mace.json"></item-slot-grid>
+            <item-slot-grid json="data/recipes/wind_charge.json"></item-slot-grid>
         </div>
     </main>
     <script src="js/min/js-yaml.min.js"></script>

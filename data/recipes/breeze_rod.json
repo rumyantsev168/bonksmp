@@ -1,0 +1,36 @@
+{
+    "width": 3,
+    "height": 3,
+    "title": "Crafting",
+    "rows": [
+        [
+            {},
+            {
+                "tooltip": "Diamond",
+                "image": "https://minecraft.wiki/images/Invicon_Diamond.png"
+            },
+            {}
+        ],
+        [
+            {},
+            {
+                "tooltip": "Blaze Rod",
+                "image": "https://minecraft.wiki/images/Invicon_Blaze_Rod.png"
+            },
+            {}
+        ],
+        [
+            {},
+            {
+                "tooltip": "Diamond",
+                "image": "https://minecraft.wiki/images/Invicon_Diamond.png"
+            },
+            {}
+        ]
+    ],
+    "result": {
+        "large": true,
+        "tooltip": "&bBreeze Rod",
+        "image": "https://minecraft.wiki/images/Invicon_Blaze_Rod.png"
+    }
+}

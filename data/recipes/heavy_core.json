@@ -1,0 +1,39 @@
+{
+    "width": 3,
+    "height": 3,
+    "title": "Crafting",
+    "rows": [
+        [
+            {
+                "tooltip": "Block of Coal",
+                "image": "https://minecraft.wiki/images/Invicon_Block_of_Coal.png"
+            },
+            {
+                "tooltip": "Block of Gold",
+                "image": "https://minecraft.wiki/images/Invicon_Block_of_Gold.png"
+            },
+            {}
+        ],
+        [
+            {
+                "tooltip": "Block of Gold",
+                "image": "https://minecraft.wiki/images/Invicon_Block_of_Gold.png"
+            },
+            {
+                "tooltip": "Block of Coal",
+                "image": "https://minecraft.wiki/images/Invicon_Block_of_Coal.png"
+            },
+            {}
+        ],
+        [
+            {},
+            {},
+            {}
+        ]
+    ],
+    "result": {
+        "large": true,
+        "tooltip": "&bHeavy Core",
+        "image": "https://minecraft.wiki/images/Invicon_Obsidian.png"
+    }
+}

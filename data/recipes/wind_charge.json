@@ -1,0 +1,34 @@
+{
+    "width": 3,
+    "height": 3,
+    "title": "Crafting",
+    "rows": [
+        [
+            {},
+            {
+                "tooltip": "Feather",
+                "image": "https://minecraft.wiki/images/Invicon_Feather.png"
+            },
+            {}
+        ],
+        [
+            {},
+            {
+                "tooltip": "&bBreeze Rod",
+                "image": "https://minecraft.wiki/images/Invicon_Blaze_Rod.png"
+            },
+            {}
+        ],
+        [
+            {},
+            {},
+            {}
+        ]
+    ],
+    "result": {
+        "large": true,
+        "count": 8,
+        "tooltip": "&dWind Charge",
+        "image": "https://minecraft.wiki/images/Invicon_Snowball.png"
+    }
+}
